@@ -17,7 +17,7 @@ public class Popular  implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private Double note;
 
@@ -29,7 +29,7 @@ public class Popular  implements Serializable {
 
     public Popular(){}
 
-    public Popular(Long id, Double note, Boolean favorite) {
+    public Popular(Integer id, Double note, Boolean favorite) {
         this.id = id;
         this.note = note;
         this.favorite = favorite;

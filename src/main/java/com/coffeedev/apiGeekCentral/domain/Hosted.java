@@ -17,7 +17,7 @@ public class Hosted  implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String url;
 
@@ -29,7 +29,7 @@ public class Hosted  implements Serializable {
 
     public Hosted(){}
 
-    public Hosted(Long id, String url, String type) {
+    public Hosted(Integer id, String url, String type) {
         this.id = id;
         this.url = url;
         this.type = type;

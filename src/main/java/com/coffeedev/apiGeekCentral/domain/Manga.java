@@ -17,7 +17,7 @@ public class Manga  implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String title;
 
@@ -47,7 +47,7 @@ public class Manga  implements Serializable {
 
     public Manga(){}
 
-    public Manga(Long id, String title, Double chapterCurrent, Double chapterTotal, Double note, Boolean favorite, List<String> categories, Author author, Popular popular, Hosted hosted) {
+    public Manga(Integer id, String title, Double chapterCurrent, Double chapterTotal, Double note, Boolean favorite, List<String> categories, Author author, Popular popular, Hosted hosted) {
         this.id = id;
         this.title = title;
         this.chapterCurrent = chapterCurrent;
