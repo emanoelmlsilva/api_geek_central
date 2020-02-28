@@ -6,6 +6,8 @@ import com.coffeedev.apiGeekCentral.repositories.MangaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,6 +49,20 @@ public class MangaService {
 
     public void removeAll(){
         mangaRepository.deleteAll();
+    }
+
+    public List<Manga> orderByTitle(){
+        List<Manga> mangas = mangaRepository.findAll();
+        Comparator<Manga> compareByTitle = (Manga manga1, Manga manga2) -> manga1.getTitle().compareTo( manga2.getTitle() );
+        Collections.sort(mangas,compareByTitle);
+        return mangas;
+    }
+
+    public List<Manga> orderByNote(){
+        List<Manga> mangas = mangaRepository.findAll();
+        Comparator<Manga> compareByNote = (Manga manga1, Manga manga2) -> manga1.getPopular().getNote().compareTo(manga2.getPopular().getNote());
+        Collections.sort(mangas,compareByNote);
+        return mangas;
     }
 
     private void updateData(Manga mangaOld, Manga mangaNew){
