@@ -1,14 +1,14 @@
 package com.coffeedev.apiGeekCentral.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data()
 @ToString(exclude = { "" })
@@ -23,6 +23,10 @@ public class Author implements Serializable {
     private Long id;
 
     private String name;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "author")
+    private List<Manga> mangas = new ArrayList<>();
 
     public Author(){}
 
