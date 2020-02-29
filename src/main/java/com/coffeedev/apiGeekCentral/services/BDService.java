@@ -9,12 +9,14 @@ import com.coffeedev.apiGeekCentral.repositories.HostedRepository;
 import com.coffeedev.apiGeekCentral.repositories.MangaRepository;
 import com.coffeedev.apiGeekCentral.repositories.PopularRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class BDService {
 
     @Autowired
