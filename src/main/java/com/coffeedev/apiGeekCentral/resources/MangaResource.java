@@ -30,12 +30,6 @@ public class MangaResource {
         return ResponseEntity.ok().body(manga);
     }
 
-    @GetMapping("/title/{title}")
-    public ResponseEntity<List<Manga>> findTitle(@PathVariable(value = "title") String title){
-        List<Manga> mangas = mangaService.findTitle(title);
-        return ResponseEntity.ok().body(mangas);
-    }
-
     @GetMapping("/titles")
     public ResponseEntity<List<Manga>> orderTitles(){
         List<Manga> mangas = mangaService.orderByTitle();

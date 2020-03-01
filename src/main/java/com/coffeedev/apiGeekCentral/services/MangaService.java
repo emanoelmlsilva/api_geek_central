@@ -21,10 +21,6 @@ public class MangaService {
         return mangaRepository.findAll();
     }
 
-    public List<Manga> findTitle(String title){
-        return mangaRepository.findByTitle(title);
-    }
-
     public Manga findById(Integer id)throws ObjectNotFoundException {
         Optional<Manga> manga = mangaRepository.findById(id);
         return manga.orElseThrow(() -> new ObjectNotFoundException(
