@@ -30,7 +30,7 @@ public class MangaResource {
         return ResponseEntity.ok().body(manga);
     }
 
-    @GetMapping("/{title}")
+    @GetMapping("/title/{title}")
     public ResponseEntity<List<Manga>> findTitle(@PathVariable(value = "title") String title){
         List<Manga> mangas = mangaService.findTitle(title);
         return ResponseEntity.ok().body(mangas);
