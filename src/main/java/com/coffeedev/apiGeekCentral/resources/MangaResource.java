@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="v1/api/mangas")
+@RequestMapping(value="/api/v1/mangas")
 public class MangaResource {
 
     @Autowired
